@@ -2,6 +2,14 @@
 
 Because math is fun.
 
+To use, text to ''(415) 390-2014''.
+
+Example txts:
+
+ * `add $15 to reed`
+ * `= $15 * 8.5%`
+ * `sub pi from list`
+
 ## Requirements
 
  * Given a text like: add $15 to reed
