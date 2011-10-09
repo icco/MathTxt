@@ -21,6 +21,7 @@ MathTxt.controllers :txt do
     msg = Message.new(:text => params["body"], :from => params["from"])
     msg.save
 
+    content_type :xml
     render :success
   end
 end
