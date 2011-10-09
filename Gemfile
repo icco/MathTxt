@@ -3,7 +3,6 @@ source :rubygems
 # Project requirements
 gem 'rack', :git => 'git://github.com/rack/rack.git'
 gem 'rake'
-gem 'sinatra-flash'
 gem "oauth2", :git => "git://github.com/intridea/oauth2.git"
 
 # Component requirements
@@ -23,4 +22,4 @@ end
 # Test requirements
 
 # Padrino Stable Gem
-gem 'padrino', '0.10.3'
+gem 'padrino', '0.10.2'
