@@ -19,10 +19,11 @@ MathTxt.controllers :txt do
     logger.debug "Message recieved."
 
     msg = Message.new
-    msg.text = params["body"]
-    msg.from = params["from"]
+    msg.text = params["Body"]
+    msg.from = params["From"]
     msg.save
 
+    p params
     p msg
 
     content_type :xml
