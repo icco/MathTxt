@@ -5,6 +5,7 @@ gem 'rake'
 
 # Component requirements
 gem 'activerecord', :require => "active_record"
+gem 'couchrest_model', '~> 1.1.0'
 
 group :development, :test do
   gem 'thin'
