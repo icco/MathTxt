@@ -13,7 +13,7 @@ gem 'activerecord', :require => "active_record"
 
 # Database
 group :production do
-  gem 'pg'
+  #gem 'pg'
 end
 
 group :development, :test do
