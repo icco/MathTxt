@@ -1,5 +1,5 @@
 ---
-:orm: activerecord
+:orm: couchdb
 :test: none
 :mock: none
 :script: jquery
