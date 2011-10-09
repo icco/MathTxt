@@ -23,9 +23,6 @@ MathTxt.controllers :txt do
     msg.from = params["From"]
     msg.save
 
-    p params
-    p msg
-
     content_type :xml
     render :success
   end
