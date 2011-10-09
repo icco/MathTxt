@@ -6,16 +6,10 @@ gem 'rake'
 gem "oauth2", :git => "git://github.com/intridea/oauth2.git"
 
 # Component requirements
-gem 'erubis', "~> 2.7.0"
+gem 'erubis'
 gem 'activerecord', :require => "active_record"
 
-# Database
-group :production do
-  #gem 'pg'
-end
-
 group :development, :test do
-  gem 'sqlite3'
   gem 'thin'
 end
 
