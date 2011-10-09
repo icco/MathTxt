@@ -1,32 +1,14 @@
-##
-# You can use other adapters like:
-#
-#   ActiveRecord::Base.configurations[:development] = {
-#     :adapter   => 'mysql',
-#     :encoding  => 'utf8',
-#     :reconnect => true,
-#     :database  => 'your_database',
-#     :pool      => 5,
-#     :username  => 'root',
-#     :password  => '',
-#     :host      => 'localhost',
-#     :socket    => '/tmp/mysql.sock'
-#   }
-#
-#ActiveRecord::Base.configurations[:development] = {
-#  :adapter => 'sqlite3',
-#  :database => Padrino.root('db', "math_txt_development.db")
-#}
-#
-#ActiveRecord::Base.configurations[:production] = {
-#  :adapter => 'sqlite3',
-#  :database => Padrino.root('db', "math_txt_production.db")
-#}
-#
-#ActiveRecord::Base.configurations[:test] = {
-#  :adapter => 'sqlite3',
-#  :database => Padrino.root('db', "math_txt_test.db")
-#}
+ActiveRecord::Base.configurations[:development] = {
+  "protocol" => 'https',
+  "host" => "sample.cloudant.com",
+  "port" =>  443,
+  "prefix" => "project",
+  "suffix" => "test",
+  "username" => "test",
+  "password" => "user"
+}
+
+ActiveRecord::Base.configurations[:production] = ActiveRecord::Base.configurations[:development]
 
 # Setup our logger
 ActiveRecord::Base.logger = logger
@@ -45,4 +27,4 @@ ActiveSupport.use_standard_json_time_format = true
 ActiveSupport.escape_html_entities_in_json = false
 
 # Now we can estabilish connection with our db
-#ActiveRecord::Base.establish_connection(ActiveRecord::Base.configurations[Padrino.env])
+ActiveRecord::Base.establish_connection(ActiveRecord::Base.configurations[Padrino.env])
