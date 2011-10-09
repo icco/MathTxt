@@ -29,5 +29,4 @@ else
 end
 
 uri = URI.parse(CouchRest::Model::Base.server.uri)
-p uri.user
-p uri.password
+puts "CloudAnt: \"#{uri.user}\", \"#{uri.password}\"."

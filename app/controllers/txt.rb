@@ -18,7 +18,9 @@ MathTxt.controllers :txt do
     # "FromZip"=>"95403"}
     puts "Message recieved."
 
-    msg = Message.new(:text => params["body"], :from => params["from"])
+    msg = Message.new
+    msg.text = params["body"]
+    msg.from = params["from"]
     msg.save
 
     content_type :xml
