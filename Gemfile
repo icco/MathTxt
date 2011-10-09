@@ -3,7 +3,6 @@ source :rubygems
 # Project requirements
 gem 'rake'
 gem 'sinatra-flash'
-gem 'gdata'
 gem "oauth2", :git => "git://github.com/intridea/oauth2.git"
 gem "json"
 
