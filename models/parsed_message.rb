@@ -20,9 +20,6 @@ class ParsedMessage < CouchRest::Model::Base
     regex = %r{^(#{verbs}) \$?([0-9.]+) ?(#{prepositions})? ?([ \w]+)?$}i
     result = regex.match msg.text
 
-    p regex
-    p msg.text
-
     if result.nil?
       return false
     else

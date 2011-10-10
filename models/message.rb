@@ -8,9 +8,9 @@ class Message < CouchRest::Model::Base
   end
 
   ## The first method we call when we get a txt
-  def Message.inc msg, from
+  def Message.inc txt, from
     msg = Message.new
-    msg.text = msg
+    msg.text = txt
     msg.from = from
     msg.save
 
