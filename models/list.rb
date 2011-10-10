@@ -16,6 +16,14 @@ class List < CouchRest::Model::Base
     list = List.by_name_and_creator(name, phone).doc
     p list
 
+    if list.nil?
+      list = List.new
+      list.total = 0
+      list.name = name
+      list.creator = phone
+      list.save
+    end
+
     return list
   end
 end

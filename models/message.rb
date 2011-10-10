@@ -18,6 +18,10 @@ class Message < CouchRest::Model::Base
 
     if !parsed
       logger.warn "Unparsable: #{msg.text}"
+    else
+      list = List.find(parsed.list, self.from)
+      list.parsed_messages << parsed
+      list.save
     end
 
     return parsed

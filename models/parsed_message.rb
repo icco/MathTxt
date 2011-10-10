@@ -21,7 +21,7 @@ class ParsedMessage < CouchRest::Model::Base
     result = regex.match msg.text
 
     if result.nil?
-      return false
+      return nil
     else
       pm.action = Action.create result[1]
       pm.amount = result[2].to_f
@@ -29,6 +29,6 @@ class ParsedMessage < CouchRest::Model::Base
       pm.save
     end
 
-    return true
+    return pm
   end
 end
