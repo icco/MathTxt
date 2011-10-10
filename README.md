@@ -2,7 +2,7 @@
 
 Because math is fun.
 
-To use, text to ''(415) 390-2014''.
+To use, text to _(415) 390-2014_.
 
 Example txts:
 
