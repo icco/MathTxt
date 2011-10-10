@@ -21,6 +21,7 @@ class ParsedMessage < CouchRest::Model::Base
     result = regex.match msg.text
 
     p regex
+    p msg.text
 
     if result.nil?
       return false
