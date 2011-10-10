@@ -8,6 +8,10 @@ class MessageList < CouchRest::Model::Base
     view :by_name_and_creator
   end
 
+  def to_json
+    return JSON.generate self
+  end
+
   def MessageList.find phone, name
     list = MessageList.by_name_and_creator(name, phone).doc
     p list

@@ -1,9 +1,13 @@
 class ParsedMessage < CouchRest::Model::Base
   property :message, Message
   property :action, Action
-  property :amount, Number
+  property :amount, Float
   property :list, MessageList
   timestamps!
+
+  def to_json
+    return JSON.generate self
+  end
 
   def ParsedMessage.parse msg
     pm = ParsedMessage.new
