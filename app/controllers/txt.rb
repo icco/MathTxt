@@ -18,9 +18,15 @@ MathTxt.controllers :txt do
     # "FromZip"=>"95403"}
     logger.info "Message recieved."
 
-    Message.inc(params["Body"], params["From"])
+    content = params["Body"].strip
 
-    content_type :xml
-    render :success
+    if content
+      Message.inc(content, params["From"])
+
+      content_type :xml
+      render :success
+    else
+      render :fail
+    end
   end
 end
