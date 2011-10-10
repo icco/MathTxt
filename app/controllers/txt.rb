@@ -16,12 +16,9 @@ MathTxt.controllers :txt do
     # "SmsStatus"=>"received",
     # "From"=>"+17077998675",
     # "FromZip"=>"95403"}
-    logger.debug "Message recieved."
+    logger.info "Message recieved."
 
-    msg = Message.new
-    msg.text = params["Body"]
-    msg.from = params["From"]
-    msg.save
+    Message.inc(params["Body"], params["From"])
 
     content_type :xml
     render :success
