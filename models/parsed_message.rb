@@ -2,7 +2,7 @@ class ParsedMessage < CouchRest::Model::Base
   property :message, Message
   property :action, Action
   property :amount, Float
-  property :list, MessageList
+  property :list, List
   timestamps!
 
   def to_json

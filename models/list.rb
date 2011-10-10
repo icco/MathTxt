@@ -1,4 +1,4 @@
-class MessageList < CouchRest::Model::Base
+class List < CouchRest::Model::Base
   property :total, Number
   collection_of :parsed_messages
   property :name, String
