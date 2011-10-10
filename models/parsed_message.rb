@@ -14,7 +14,7 @@ class ParsedMessage < CouchRest::Model::Base
     prepositions = [ "to", "from" ].join "|"
 
     # ^(add|sub) \$?([0-9.]+) ?(to|from)? ?([\w ]+)?$/
-    regex = %r{^(#{verbs}) \$?([0-9.]+) ?(#{prepositions})? ?([ \w]+)?$}
+    regex = %r{^(#{verbs}) \$?([0-9.]+) ?(#{prepositions})? ?([ \w]+)?$}i
     result = regex.match msg.text
 
     if result.nil?
