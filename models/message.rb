@@ -17,7 +17,7 @@ class Message < CouchRest::Model::Base
     parsed = ParsedMessage.parse msg
 
     if !parsed
-      log.warning "Unparsable: #{msg.txt}"
+      logger.warning "Unparsable: #{msg.txt}"
     end
 
     return parsed
