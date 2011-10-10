@@ -25,7 +25,7 @@ class ParsedMessage < CouchRest::Model::Base
     else
       pm.action = Action.create result[1]
       pm.amount = result[2].to_f
-      pm.list = result[3].strip
+      pm.list = result[4].strip
       pm.save
     end
 
