@@ -3,6 +3,10 @@ class Message < CouchRest::Model::Base
   property :from, String
   timestamps!
 
+  def to_json
+    return JSON.generate self
+  end
+
   ## The first method we call when we get a txt
   def Message.inc msg, from
     msg = Message.new

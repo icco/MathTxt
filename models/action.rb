@@ -3,6 +3,10 @@ class Action < CouchRest::Model::Base
 
   VALID = [ 'add', 'sub' ]
 
+  def to_json
+    return JSON.generate self
+  end
+
   def Action.create str
     ac = nil
 

@@ -1,5 +1,5 @@
 class List < CouchRest::Model::Base
-  property :total, Number
+  property :total, Float
   collection_of :parsed_messages
   property :name, String
   property :creator, String
@@ -12,8 +12,8 @@ class List < CouchRest::Model::Base
     return JSON.generate self
   end
 
-  def MessageList.find phone, name
-    list = MessageList.by_name_and_creator(name, phone).doc
+  def List.find phone, name
+    list = List.by_name_and_creator(name, phone).doc
     p list
 
     return list

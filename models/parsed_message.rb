@@ -2,7 +2,7 @@ class ParsedMessage < CouchRest::Model::Base
   property :message, Message
   property :action, Action
   property :amount, Float
-  property :list, List
+  property :list, String
   timestamps!
 
   def to_json
@@ -12,7 +12,6 @@ class ParsedMessage < CouchRest::Model::Base
   def ParsedMessage.parse msg
     pm = ParsedMessage.new
     pm.message = msg
-
 
     verbs = Action.strings.join "|"
     prepositions = [ "to", "from" ].join "|"
@@ -26,7 +25,7 @@ class ParsedMessage < CouchRest::Model::Base
     else
       pm.action = Action.create result[1]
       pm.amount = result[2].to_f
-      pm.list = MessageList.find(msg.from, result[3].strip)
+      pm.list = result[3].strip
       pm.save
     end
 
