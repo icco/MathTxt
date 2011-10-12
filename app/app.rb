@@ -5,18 +5,13 @@ class MathTxt < Padrino::Application
 
   enable :sessions
 
-  get '/' do
-    "Hello."
+  configure :development do
+    disable :asset_stamp # no asset timestamping for dev
   end
 
-  ##
-  # You can configure for a specified environment like:
-  #
-  #   configure :development do
-  #     set :foo, :bar
-  #     disable :asset_stamp # no asset timestamping for dev
-  #   end
-  #
+  get '/' do
+    render :index
+  end
 
   ##
   # You can manage errors like:
