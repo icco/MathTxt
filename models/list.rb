@@ -10,6 +10,7 @@ class List < CouchRest::Model::Base
 
   def initialize
     @total = 0
+    @parsed_messages = []
   end
 
   def update
