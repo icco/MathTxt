@@ -1,7 +1,23 @@
 class Action < CouchRest::Model::Base
   property :action, String
 
-  VALID = [ 'add', 'sub' ]
+  VALID = [ 'add', 'sub', 'remove' ]
+
+  def run *opts
+    ret = 0.0
+
+    opts.each do |v|
+      case self.action
+      when 'add'
+        ret = ret + v
+      when 'sub'
+      when 'remove'
+        ret = ret - v
+      end
+    end
+
+    return ret
+  end
 
   def to_json
     return JSON.generate self

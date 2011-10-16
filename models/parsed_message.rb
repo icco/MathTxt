@@ -9,7 +9,11 @@ class ParsedMessage < CouchRest::Model::Base
     return JSON.generate self
   end
 
-  def ParsedMessage.parse msg
+  def act cur_val
+    return self.action.run(amount, cur_value)
+  end
+
+  def self.parse msg
     pm = ParsedMessage.new
     pm.message = msg
 
