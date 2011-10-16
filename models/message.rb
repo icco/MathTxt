@@ -22,8 +22,6 @@ class Message < CouchRest::Model::Base
       list = List.find(parsed.list, from)
       list.parsed_messages << parsed
       list.save
-
-      p list
     end
 
     return parsed

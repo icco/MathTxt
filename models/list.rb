@@ -13,7 +13,7 @@ class List < CouchRest::Model::Base
   end
 
   def List.find phone, name
-    list = List.by_name_and_creator({ :name => name, :creator => phone }).doc
+    list = List.by_name_and_creator({:name => name, :creator => phone})
     p list
 
     if list.nil?
