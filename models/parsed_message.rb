@@ -10,7 +10,7 @@ class ParsedMessage < CouchRest::Model::Base
   end
 
   def act cur_val
-    return self.action.run(amount, cur_value)
+    return self.action.run(self.amount, cur_val)
   end
 
   def self.parse msg
