@@ -13,12 +13,10 @@ class List < CouchRest::Model::Base
     @parsed_messages = []
   end
 
-  def update
+  def recount
     self.parsed_messages.each do |pm|
       self.total = pm.act self.total
     end
-
-    self.save
   end
 
   def to_json

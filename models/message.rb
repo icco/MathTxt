@@ -21,6 +21,7 @@ class Message < CouchRest::Model::Base
     else
       list = List.find(parsed.list, from)
       list.parsed_messages << parsed
+      list.recount
       list.save
     end
 
