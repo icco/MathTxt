@@ -13,7 +13,9 @@ class List < CouchRest::Model::Base
   end
 
   def List.find phone, name
-    list = List.by_name_and_creator({:name => name, :creator => phone})
+    list_query = List.by_name_and_creator({:name => name, :creator => phone})
+    list = list_query.first
+
     p list
 
     if list.nil?
