@@ -23,6 +23,10 @@ class Action < CouchRest::Model::Base
     return JSON.generate self
   end
 
+  def to_s
+    return self.action
+  end
+
   def Action.create str
     ac = nil
 
