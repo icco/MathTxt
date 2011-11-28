@@ -1,5 +1,14 @@
 <ul>
-<% @messages.each do |msg| %>
-  <li>Date: <%= msg.created_at %> Text: <%= msg.text.inspect %> Parsed? <%= msg.parsed? %></li>
-<% end %>
+  <% @messages.each do |msg| %>
+    <li>
+    Date: <%= msg.created_at %> Text: <%= msg.text.inspect %>
+    <% if msg.parsed? %>
+      <ul>
+        <li>Action: <%= msg.parsed.action %></li>
+        <li>Amount: <%= msg.parsed.amount %></li>
+        <li>List: <%= msg.parsed.list %></li>
+      </ul>
+    <% end %>
+    </li>
+  <% end %>
 </ul>
