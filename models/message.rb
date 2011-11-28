@@ -12,7 +12,7 @@ class Message < CouchRest::Model::Base
   end
 
   def parsed
-    return ParsedMessage.by_message(self).first
+    return ParsedMessage.by_message({:message => self}).first
   end
 
   def parsed?
