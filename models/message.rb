@@ -11,6 +11,14 @@ class Message < CouchRest::Model::Base
     return JSON.generate self
   end
 
+  def parsed
+    return ParsedMesage.by_message(self).first
+  end
+
+  def parsed?
+    return !self.parsed.nil?
+  end
+
   ## The first method we call when we get a txt
   def Message.inc txt, from
     msg = Message.new

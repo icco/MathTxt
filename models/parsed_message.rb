@@ -5,6 +5,10 @@ class ParsedMessage < CouchRest::Model::Base
   property :list, String
   timestamps!
 
+  design do
+    view :by_message
+  end
+
   def to_json
     return JSON.generate self
   end

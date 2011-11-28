@@ -1,3 +1,5 @@
-<pre>
-<%= @messages.inspect %>
-</pre>
+<ul>
+<% @messages.each do |msg| %>
+  <li>Date: <%= msg.created_at %> Text: <%= msg.text.inspect %> Parsed? <%= msg.parsed? %></li>
+<% end %>
+</ul>
