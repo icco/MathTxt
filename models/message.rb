@@ -3,6 +3,10 @@ class Message < CouchRest::Model::Base
   property :from, String
   timestamps!
 
+  design do
+    view :by_from
+  end
+
   def to_json
     return JSON.generate self
   end
