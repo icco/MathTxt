@@ -29,7 +29,7 @@ class Message < CouchRest::Model::Base
   end
 
   def self.get_all_from number
-    query = Mesage.by_from({:from => number})
+    query = self.by_from({:from => number})
 
     return query.all
   end
